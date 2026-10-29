@@ -13,7 +13,7 @@ def test_summarizer_sends_instruction_and_text() -> None:
     Summarizer(fake).summarize("the document")
     sent = fake.calls[0]
     assert sent[0].role == "system"
-    assert sent[1] == Message("user", "the document")
+    assert sent[1] == Message(role="user", content="the document")
 
 
 class UppercaseClient:

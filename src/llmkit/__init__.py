@@ -3,6 +3,7 @@
 from importlib.metadata import version
 
 from llmkit.client import LLMClient
+from llmkit.config import Settings
 from llmkit.fake import FakeClient, FakeClientExhaustedError
 from llmkit.summarizer import Summarizer
 from llmkit.types import Message, Response, Role, Usage
@@ -16,6 +17,7 @@ __all__ = [
     "Message",
     "Response",
     "Role",
+    "Settings",
     "Summarizer",
     "Usage",
     "__version__",

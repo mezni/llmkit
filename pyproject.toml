@@ -7,7 +7,10 @@ authors = [
     { name = "M.Mezni", email = "mamezni@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.2",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.15,<0.13.0"]
@@ -35,6 +38,12 @@ select = ["E", "F", "I", "B", "UP", "SIM", "ASYNC", "RUF"]
 strict = true
 python_version = "3.12"
 files = ["src", "tests"]
+plugins = ["pydantic.mypy"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
